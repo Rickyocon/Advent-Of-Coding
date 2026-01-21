@@ -18,5 +18,9 @@ def IsPatternNumber(string):
     #Split string ing half and store each half to be compared
     FirstHalf = string[:len(string)//2] # take length of string and then split it in half -> colon in front means get eveything from the begining until the half
     SecondHalf =  string[len(string)//2:] # take length of string and then split it in half -> colon at end means get eveything from the half until the end
+    if FirstHalf == SecondHalf:
+        return True
+    else:
+        return False
 
     
