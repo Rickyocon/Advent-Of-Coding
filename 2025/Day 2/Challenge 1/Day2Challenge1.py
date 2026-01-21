@@ -1,3 +1,6 @@
+#Global Variables
+ListOfInvaildInputs = []
+
 #--------------------------------------------------
 
 PuzzelInput = "2025\Day 2\Challenge 1\PuzzelInput.txt"
@@ -33,6 +36,22 @@ def GetRange(string):
     maxNum = int(max)
 
     ListOfNumbersInRange = list(range(minNum,maxNum+1))
+    ConvertListOfNumbersToStrings = [str(num) for num in ListOfNumbersInRange]
+    return ConvertListOfNumbersToStrings
 
 #--------------------------------------------------
 
+for numbers in ListOfInput:
+    StringOfNumbersInFirstRange = GetRange(numbers)
+    for string in StringOfNumbersInFirstRange:
+        InvaildInput = IsPatternNumber(string)
+        if InvaildInput == True:
+            #Append to a list of all invalid inputs
+            ListOfInvaildInputs.append(string)
+
+
+NumberValuesOfInvalidInputs = [int(value) for value in ListOfInvaildInputs]
+
+Total = sum(NumberValuesOfInvalidInputs)
+
+print(Total)
