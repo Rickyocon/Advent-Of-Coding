@@ -7,13 +7,18 @@ def file_to_list(path_to_input_file):
     return items
 
 # --------------------------------------------------
-
-def is_pattern_number(string):
-    # Split string in half and store each half to be compared
-    first_half = string[:len(string)//2]  # everything from beginning until the half
-    second_half = string[len(string)//2:]  # everything from half until the end
-    return first_half == second_half
     
+def is_pattern_number(string):
+    StringLength = len(string)
+    if StringLength > 1:
+        for char in range(1,len(string)//2 + 1):
+            canaditePattern = string[:char]
+            if StringLength % len(canaditePattern) == 0:
+                testString = canaditePattern * (StringLength // len(canaditePattern))
+                if testString == string:
+                    return True
+        return False
+        
 # --------------------------------------------------
 
 def get_range(string):
