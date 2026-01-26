@@ -18,6 +18,7 @@ def is_pattern_number(string):
                 if testString == string:
                     return True
         return False
+    
         
 # --------------------------------------------------
 
